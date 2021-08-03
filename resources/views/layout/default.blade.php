@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToDoList</title>
-  <link rel="stylesheet" href="{{ asset('../../css/reset.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/reset.css') }}">
 </head>
 <style>
   body {
@@ -13,12 +13,13 @@
   }
   .todolist {
     background-color: white;
-    width: 70%;
-    margin: 15%;
+    width: 50%;
+    margin: 200px 25%;
     border-radius: 15px;
   }
   h1 {
     padding: 20px;
+    font-size: 20px
   }
 </style>
 <body>
