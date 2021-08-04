@@ -13,9 +13,9 @@ class CreateTodolistsTable extends Migration
      */
     public function up()
     {
-        Schema::create('todolists', function (Blueprint $table) {
+        Schema::create('todo_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('content',191)->nullable(false)->change();
+            $table->string('content',191);
             $table->timestamp('creted_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
@@ -26,9 +26,8 @@ class CreateTodolistsTable extends Migration
      *
      * @return void
      */
-    /*ublic function down()
+    public function down()
     {
         Schema::dropIfExists('todolists');
     }
-    */
 }
