@@ -10,12 +10,12 @@ class TodoController extends Controller
     public function index()
     {
         $items = TodoList::all();
-        return view('index',['items' => $items]);
+        return view('index',$items);
     }
     public function create(Request $request)
     {
         $this->validate($request,TodoList::$rules);
-        TodoList::create($request->content);
+        TodoList::create($request->all());
         return redirect('/');
     }
 }
