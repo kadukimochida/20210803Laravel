@@ -35,7 +35,6 @@
 <input class="btn"type="submit" value="追加">
 </form>
 <table>
-  <form action="" method="POST">
   <tr>
     <th>作成日</th>
     <th>タスク名</th>
@@ -47,11 +46,12 @@
     @csrf
   <tr>
     <td>{{$item->created_at}}</td>
-    <td><input type="text" name="content" value="{{$item->content}}"></td>
+    <td><input type="hidden" value="{{$item->id}}">
+    <input type="text" name="content" value="{{$item->content}}"></td>
     <td><input type="submit" formaction="/todo/update" value="更新"></td>
     <td><input type="submit" formaction="/todo/delete" value="削除"></td>
   </tr>
-  @endforeach
   </form>
+  @endforeach
 </table>
 @endsection
