@@ -31,6 +31,9 @@
 <input type="text" name="content">
 <input type="submit" value="追加">
 </form>
-<p>{{$items}}</p>
+@foreach($items as $item)
+<p>{{$item->content}}</p>
+@endforeach
+
 
 @endsection
