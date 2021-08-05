@@ -9,13 +9,14 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $items = TodoList::all();
-        return view('index',$items);
+        return view('index');
     }
     public function create(Request $request)
     {
+        $items = TodoList::all();
         $this->validate($request,TodoList::$rules);
-        TodoList::create($request->all());
-        return redirect('/');
+        $form = $request->all();
+        TodoList::create($form);
+        return view('add',['items'=>$items]);
     }
 }

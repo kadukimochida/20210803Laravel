@@ -16,7 +16,7 @@ class CreateTodolistsTable extends Migration
         Schema::create('todo_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('content',191);
-            $table->timestamp('creted_at')->useCurrent()->nullable();
+            $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
