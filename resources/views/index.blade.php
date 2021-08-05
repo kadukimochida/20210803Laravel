@@ -44,8 +44,9 @@
   </tr>
   @foreach($items as $item)
   <form action="" method="POST">
+    @csrf
   <tr>
-    <td>{{$item->created_at}}<td>
+    <td>{{$item->created_at}}</td>
     <td><input type="text" name="input" value="{{$item->content}}"></td>
     <td><input type="submit" formaction="/todo/update" value="更新"></td>
     <td><input type="submit" formaction="/todo/delete" value="削除"></td>
