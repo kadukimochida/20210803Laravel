@@ -21,7 +21,7 @@ class TodoController extends Controller
     }
     public function  edit(Request $request)
     {
-        $todo = TodoList::find($request->input('id','content'));
+        $todo = TodoList::where('id',$request->input('id'))->where('content',$request->input('content'))->get();
         return view('index');
     }
     public function update(Request $request)
@@ -29,7 +29,7 @@ class TodoController extends Controller
         $this->validate($request,TodoList::$rules);
         $form = $request->all();
         unset($form['_token']);
-        TodoList::where('id',$request->id)->update($form);
+        TodoList::where('id',$request->input('id'))->update($form);
         return redirect('/');
     }
 }
