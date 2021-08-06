@@ -13,8 +13,8 @@
   }
   .todolist {
     background-color: white;
-    width: 50%;
-    margin: 200px 25%;
+    width: 60%;
+    margin: 200px 20%;
     border-radius: 15px;
   }
   h1 {

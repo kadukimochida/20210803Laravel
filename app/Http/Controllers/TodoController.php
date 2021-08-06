@@ -32,4 +32,14 @@ class TodoController extends Controller
         TodoList::where('id',$request->id)->update($form);
         return redirect('/');
     }
+    public function delete(Request $request)
+    {
+        $todo = TodoList::find($request->id);
+        return view('index');
+    }
+    public function remove(Request $request)
+    {
+        TodoList::find($request->id)->delete();
+        return redirect('/');
+    }
 }
